@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1739115872702,
+      "tag": "0000_public_maria_hill",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1739155776254,
+      "tag": "0001_natural_firebird",
+      "breakpoints": true
+    }
+  ]
+}
