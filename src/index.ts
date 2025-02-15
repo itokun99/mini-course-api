@@ -8,6 +8,7 @@ import lessonRoutes from "./features/lesson";
 import authRoutes from "./features/auth";
 import { SignatureKey } from "hono/utils/jwt/jws";
 import { env } from "hono/adapter";
+import { ContentfulStatusCode } from "hono/utils/http-status";
 
 const app = new Hono();
 
@@ -25,7 +26,10 @@ app.use(logger());
 
 app.onError((err, c) => {
   console.error(`${err}`);
-  return c.json(createResponse("error", err?.message), 500);
+  return c.json(
+    createResponse("error", err?.message),
+    c.res.status as ContentfulStatusCode,
+  );
 });
 
 // api routes mini courses

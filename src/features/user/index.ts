@@ -1,7 +1,10 @@
-import { db, usersTable } from "@/core";
+import { authMiddleware, db, usersTable } from "@/core";
 import { Hono } from "hono";
 
 const app = new Hono();
+
+// auth middleware
+app.use(authMiddleware);
 
 app.get("/", async (c) => {
   const data = await db.select().from(usersTable);
