@@ -11,6 +11,9 @@ export const APP_CONFIG = {
     secret: Bun.env.JWT_SECRET || "",
     expiresIn: Bun.env.JWT_EXPIRES_IN || "",
   },
+  static: {
+    location: Bun.env.STATIC_FILE_LOCATION || "./",
+  },
 };
 
 console.log(APP_CONFIG);
