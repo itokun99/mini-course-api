@@ -35,6 +35,8 @@ export const coursesTable = sqliteTable("courses", {
   id: int().primaryKey({ autoIncrement: true }),
   name: text().notNull(),
   description: text().notNull(),
+  users_id: int().notNull(),
+  image: text(),
   created_at: text(),
   updated_at: text(),
   deleted_at: text(),

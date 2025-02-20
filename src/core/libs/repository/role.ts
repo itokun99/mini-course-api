@@ -18,6 +18,19 @@ export const roleRepo = {
       throw err;
     }
   },
+  getById: async (id: number) => {
+    try {
+      const [data] = await db
+        .select()
+        .from(rolesTable)
+        .where(eq(rolesTable.id, id))
+        .limit(1);
+      return data;
+    } catch (err: any) {
+      console.log("err roleRepo -> getById", err);
+      throw err;
+    }
+  },
   getByValue: async (value: string) => {
     try {
       const [data] = await db
