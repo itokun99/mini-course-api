@@ -47,6 +47,8 @@ export const lessonsTable = sqliteTable("lessons", {
   name: text().notNull(),
   description: text().notNull(),
   course_id: int().notNull(),
+  created_by: int().notNull(),
+  image: text(),
   created_at: text(),
   updated_at: text(),
   deleted_at: text(),

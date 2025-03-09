@@ -18,7 +18,9 @@ export const adminRoleMiddleware = createMiddleware(async (c, next) => {
   if (!user) {
     return c.json(createResponse("error", "Unauthorized"), 401);
   }
+
   const userRole = await roleRepo.getById(user.role_id);
+
   if (!userRole || userRole.value !== "admin") {
     return c.json(createResponse("error", "Unauthorized"), 401);
   }
